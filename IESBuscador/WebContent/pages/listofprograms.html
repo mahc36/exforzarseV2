@@ -11,34 +11,34 @@
     <script type="text/javascript" src="../js/extensions/jquery-3.2.0.min.js"></script>
     <script type="text/javascript" src="../js/extensions/angular.min.js"></script>
     <script type="text/javascript" src="../js/extensions/angular-route.js"></script>
-	<script type="text/javascript" src="../js/extensions/angular-cookies.js"></script>
+    <script type="text/javascript" src="../js/extensions/angular-cookies.js"></script>
     <script type="text/javascript" src="../js/app.js"></script>
     <script type="text/javascript" src="../js/service/programService.js"></script>
     <script type="text/javascript" src="../js/controller/programCtrl.js"></script>
-	
+
+    <link rel="stylesheet" href="../css/style.css">
+
 </head>
 
 <body class="bodie-home" data-ng-app="app" data-ng-controller="programCtrl">
-   <nav class="navbar navbar-inverse" style="background-color:272B2A">
-		<div class="container-fluid">
-			<ul class="nav navbar-nav">
-				<li ><a href="../index.html">Home IESBuscador</a></li>
-				<li ><a href="listofuniversities.html">IES</a></li>
-				<li ><a href="knowledgeareas.html">Areas/Disciplinas</a></li>
-			</ul>
-			<ul class="nav navbar-nav navbar-right">
-				<li ><a href="logout.html">Cerrar Sesión</a></li>
-				<li ><a href="login.html">Iniciar Sesión</a></li>
-				<li ><a href="register.html">Registar</a></li>
-				
-			</ul>
-		</div>
-	</nav>
-    <div>
-        <div align="center">
-            <img src="../img/imgprogramas.jpg" alt="University" style="width: 95%; height: 228px; border-left: 30px !important;">
+    <nav class="navbar navbar-inverse" style="background-color:272B2A">
+        <div class="container-fluid">
+            <ul class="nav navbar-nav">
+                <li><a href="../index.html">Home IESBuscador</a></li>
+                <li><a href="listofuniversities.html">IES</a></li>
+                <li><a href="knowledgeareas.html">Areas/Disciplinas</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="logout.html">Cerrar Sesión</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+                <li><a href="register.html">Registar</a></li>
+
+            </ul>
         </div>
-    </div>
+    </nav>
+    <section class="bg-image-full" style="background-image: url('../img/imgprogramas2.jpg');">
+        <div style="height: 300px;"></div>
+    </section>
     <div>
         <ul class="breadcrumb">
             <li><a href="../index.html">Home</a></li>
@@ -140,7 +140,7 @@
             <div class="container buscador col-sm-12 col-md-12">
                 <form>
                     <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Search" >
+                        <input type="text" class="form-control" placeholder="Search">
                         <div class="input-group-btn">
                             <button class="btn btn-default" type="submit">
 								<i class="glyphicon glyphicon-search"></i>
@@ -165,15 +165,15 @@
                                         <h4>{{item.iesName}}</h4>
                                         <h5>Ciudad: {{item.campusCity}} &nbsp &nbsp Direccion: {{item.campusLocation}}</h5>
                                         <div id={{item.creditCost}} class="collapse">
-									    	Costo total Carrera: {{item.creditCost * item.credit}} $
-									  </div>
+                                            Costo total Carrera: {{item.creditCost * item.credit}} $
+                                        </div>
                                     </div>
                                     <div class="media-right">
                                         <p>
                                             <button type="button" class="btn btn-primary" role="button" data-toggle="collapse" data-target="#{{item.creditCost}}">Ver
 												informacion</button>
                                         </p>
-									  
+
                                     </div>
                                 </div>
                             </div>
@@ -185,7 +185,7 @@
         </div>
     </div>
     <br />
-	
+
     <footer class="footer" style="background-color: #000000;">
         <div class="container">
             <p class="text-muted">Place sticky footer content here.</p>

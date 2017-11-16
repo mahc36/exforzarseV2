@@ -1,9 +1,9 @@
 .bodie-home {
     margin: 0px;
     padding: 0px;
-    height: 1000px;
-    /*background: linear-gradient(to bottom, #8c8c8c 0%, #ffffff 100%)*/
+    background: linear-gradient(to bottom, #8c8c8c 0%, #ffffff 100%);
     background-color: #D5d8dc;
+    overflow-x: hidden;
 }
 
 .buscador {
@@ -36,18 +36,9 @@ head body form div input {
     overflow: hidden;
 }
 
-.navbar-nav {
-    width: 100%;
-    text-align: center;
-}
 
-.navbar-nav>li {
-    float: none;
-    display: inline-block;
-}
-
-.carousel-inner>.item>img,
-.carousel-inner>.item>a>img {
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
     width: 50%;
     height: 20%;
     margin: auto;
@@ -77,7 +68,7 @@ ul.breadcrumb li {
 
 /* Add a slash symbol (/) before/behind each list item */
 
-ul.breadcrumb li+li:before {
+ul.breadcrumb li + li:before {
     padding: 8px;
     color: black;
     content: "/\00a0";
@@ -120,4 +111,24 @@ ul.breadcrumb li a:hover {
 .ies-name {
     font-weight: bold;
     font-size: 32pt;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+.bg-image-full {
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+.navbar {
+    margin-bottom: 0px !important;
 }
