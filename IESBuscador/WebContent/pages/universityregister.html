@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Registrar Universidad</title>
+	
+	<script src="../js/extensions/angular.min.js" type="text/javascript" ></script>
+	<script type="text/javascript" src="../js/extensions/angular-route.js"></script>
+	<script type="text/javascript" src="../js/extensions/angular-cookies.js"></script>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="../js/app.js"></script>
+	<script type="text/javascript" src="../js/controller/iesCtlr.js"></script>
+	<script type="text/javascript" src="../js/service/iesService.js"></script>
+	
+	
+</head>
+<body>
+	<nav class="navbar navbar-inverse" style="background-color:272B2A">
+		<div class="container-fluid">
+			<ul class="nav navbar-nav">
+				<li ><a href="../index.html">Home IESBuscador</a></li>
+				<li ><a href="listofuniversities.html">IES</a></li>
+				<li ><a href="knowledgeareas.html">Areas/Disciplinas</a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li ><a href="logout.html">Cerrar Sesión</a></li>
+				<li ><a href="login.html">Iniciar Sesión</a></li>
+				<li class="active"><a href="#">Registar</a></li>
+			</ul>
+		</div>
+	</nav>
+	
+	<div class="container" data-ng-app="app" data-ng-controller="iesCtlr">
+        <h2>Registro Universidad</h2>
+        <form>
+            <div class="form-group">
+                <label for="text">Nombre universidad:</label>
+              	<input type="text" class="form-control" id="universityName"   data-ng-model="iesForm.name" placeholder="Nombre Universidad" required>
+            </div> 
+            
+            <div class="form-group">
+                <label for="text">Slogan:</label>
+                <input type="text" class="form-control" id="slogan" data-ng-model="iesForm.slogan"  placeholder="slogan" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">Logo:</label>
+                <input name="file-input" id="file-input" data-ng-model="iesForm.logo" type="file" />
+            </div>
+            
+            <div class="form-group">
+                <label for="text">Caracter:</label>
+                <div class="radio">
+			      <label><input type="radio" name="optradio" data-ng-model="iesForm.type" ng-value="true" required>Privada</label>
+			    </div>
+			    <div class="radio">
+			      <label><input type="radio" name="optradio" data-ng-model="iesForm.type" ng-value="false" required>Publica</label>
+			    </div>
+            </div>
+            
+            
+            <div class="form-group">
+                <label for="text">Acreditacion:</label>
+                <div class="radio">
+			      <label><input type="radio" name="optradioaccreditation" data-ng-model="iesForm.accreditation" ng-value="true" required>Acreditada</label>
+			    </div>
+			    <div class="radio">
+			      <label><input type="radio" name="optradioaccreditation" data-ng-model="iesForm.accreditation" ng-value="false" required>No acreditada</label>
+			    </div>
+            </div>            
+			
+			<div class="text-center">
+				<button type="submit" class="btn btn-default btn-lg" id="addIesBtn" data-ng-click="adUniversity(iesForm)">Registrar universidad</button>
+			</div>
+            
+        </form>
+    </div>
+</body>
+</html>
