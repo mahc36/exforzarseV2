@@ -31,7 +31,7 @@
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="logout.html">Cerrar Sesión</a></li>
                 <li><a href="login.html">Iniciar Sesión</a></li>
-                <li><a href="register.html">Registar</a></li>
+                <li><a href="register.html">Registrar</a></li>
 
             </ul>
         </div>
@@ -152,7 +152,7 @@
             </div>
 
             <div data-ng-show="programList.length != 0">
-                <ul>
+                <ul style="list-style-type: none !important;">
                     <li data-ng-repeat="item in programList | filter:{academicLevel:academicLevelFilter} | filter:{modality:modalityFilter} | filter:priceRange | filter:{iesCaracter:caracterFilter} | filter:{campusCity:cityFilter} | filter:{iesAccreditation:accreditationFilter} | filter:searchFilter">
                         <div class="col-sm-12 col-md-12" style="margin-top: 30px;">
                             <div class="thumbnail">

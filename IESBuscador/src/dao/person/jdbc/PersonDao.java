@@ -35,6 +35,7 @@ public class PersonDao implements IPersonDao {
             	instruction.executeUpdate();
             	message="OK";
     		} catch (Exception sql) {
+    			System.out.println(sql.getMessage());
     			message ="ERROR";
             	con.rollback();
                 throw new Exception(sql.toString());
