@@ -32,7 +32,6 @@ public class PersistUtil {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		
 	}
 
 	public static void closeResources(PreparedStatement instruccion, ResultSet resultado) throws Exception{
