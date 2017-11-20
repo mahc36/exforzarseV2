@@ -26,6 +26,15 @@ public class IesService {
 	public List<Filter> listIes(){
 		return iesbussiness.getIes();
 	}
+	
+	
+	@GET
+	@Path("/getAllIES")
+	@Produces(MediaType.APPLICATION_JSON)
+	public List<IesDTO> listAllIes(){
+		return iesbussiness.getALLIes();
+	}
+	
 	@GET
 	@Path("/getIESbyFilter")
 	@Consumes(MediaType.APPLICATION_JSON)

@@ -10,6 +10,8 @@ import dto.IesDTO;
 public interface IIesDao {
 
 	List<Filter> getIes(Connection con)throws Exception;
+	
+	List<IesDTO> getAllIes(Connection con)throws Exception;
 
 	List<IesDTO> getIesbyFilter(Connection con, Filter filter)throws Exception;
 

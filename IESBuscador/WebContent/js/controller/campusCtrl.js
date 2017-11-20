@@ -1,5 +1,20 @@
-app.controller("campusCtrl", ["$scope", "campusService", function ($scope, campusService) {
+app.controller("campusCtrl", ["$scope", "campusService","$cookieStore","$window", function ($scope, campusService,$cookieStore,$window) {
 
+	
+	$scope.sessionData = {};
+    $scope.checkSession = function () {
+        var getCookie = $cookieStore.get('cookiePersonSession');
+        if (angular.isUndefined(getCookie)) {
+            alert("Debe iniciar sesion primero");
+            $window.location.href = 'login.html';
+            return;
+        } else {
+            $scope.sessionData.id = getCookie.id;
+            $scope.sessionData.name = getCookie.name;
+            $scope.sessionData.email = getCookie.email;
+            $scope.sessionData.password = getCookie.password;
+        }
+    }
 
     $scope.campusForm = {};
 

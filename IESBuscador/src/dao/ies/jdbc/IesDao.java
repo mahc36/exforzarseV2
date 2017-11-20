@@ -60,6 +60,35 @@ public class IesDao implements IIesDao {
 		}
 		return listOfIes;
 	}
+	
+	@Override
+	public List<IesDTO> getAllIes(Connection con) throws Exception {
+		PreparedStatement instruction=null;
+		ResultSet result=null;
+		String query;
+		IesDTO ies = null;
+		List<IesDTO> listOfIes=new ArrayList<>();
+		try{
+			query= IesSql.GET_LIST_ALL_IES;
+			instruction=con.prepareStatement(query);
+			result=instruction.executeQuery();
+			while(result.next()){
+				ies = new IesDTO();
+				ies.setId(result.getInt("ies_id"));
+				ies.setName(result.getString("ies_name"));
+				ies.setSlogan(result.getString("ies_slogan"));
+				ies.setEscudo(result.getString("ies_escudo"));
+				ies.setAccreditation(result.getBoolean("ies_accreditation"));
+				ies.setCaracter(result.getString("ies_caracter"));
+				listOfIes.add(ies);
+			}
+		}finally{
+			PersistUtil.closeResources(instruction, result);
+		}
+		return listOfIes;
+	}
+	
+	
 	public List<IesDTO> getIesbyFilter(Connection con,Filter filter) throws Exception {
 		PreparedStatement instruction = null;
 		ResultSet result = null;
@@ -162,4 +191,6 @@ public class IesDao implements IIesDao {
 		}
         return message;
 	}
+
+	
 }

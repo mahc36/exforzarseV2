@@ -1,4 +1,4 @@
-app.controller("iesCtlr", ["$scope", "$window", "iesService", function iesCtlr($scope, $window, iesService) {
+app.controller("iesCtlr", ["$scope", "$window","$cookieStore", "iesService", function iesCtlr($scope, $window,$cookieStore, iesService) {
     $scope.Ies = [];
     $scope.answer = "";
     $scope.iesid = "";
@@ -11,6 +11,12 @@ app.controller("iesCtlr", ["$scope", "$window", "iesService", function iesCtlr($
             }
         });
     }
+    
+    $scope.alertMessage = function () {
+       alert("Página en construción");
+       $window.location.href = '../index.html';
+    }
+    
     $scope.findIES = function (nameSearch) {
         if (nameSearch == null) {
             alert("Debe indicar el nombre de la IES a buscar");
@@ -58,9 +64,26 @@ app.controller("iesCtlr", ["$scope", "$window", "iesService", function iesCtlr($
             "accreditation": iesForm.accreditation
         };
         iesService.addUniversity(ies).then(function (message) {
-            alert("Que nos trajo: " + message.data);
+            alert("Registro: " + message.data);
         });
     }
+    
+    
+    $scope.sessionData = {};
+    $scope.checkSession = function () {
+        var getCookie = $cookieStore.get('cookiePersonSession');
+        if (angular.isUndefined(getCookie)) {
+            alert("Debe iniciar sesion primero");
+            $window.location.href = 'login.html';
+            return;
+        } else {
+            $scope.sessionData.id = getCookie.id;
+            $scope.sessionData.name = getCookie.name;
+            $scope.sessionData.email = getCookie.email;
+            $scope.sessionData.password = getCookie.password;
+        }
+    }
+    
 
 
 }]);
