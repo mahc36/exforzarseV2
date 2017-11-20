@@ -1,12 +1,48 @@
-
 .encabezado {
     background-color: aqua;
 }
 
 .ng-hide:not(.ng-hide-animate) {
-  /* These are just alternative ways of hiding an element */
-  display: block!important;
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
+    /* These are just alternative ways of hiding an element */
+    display: block!important;
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+.btn3d {
+    transition: all .08s linear;
+    position: relative;
+    outline: medium none;
+    -moz-outline-style: none;
+    border: 0px;
+    margin-right: 10px;
+    margin-top: 15px;
+}
+
+.btn3d:focus {
+    outline: medium none;
+    -moz-outline-style: none;
+}
+
+.btn3d:active {
+    top: 9px;
+    background-color: #cecece;
+}
+
+.btn3d:hover {
+    top: 9px;
+    background-color: #cecece;
+}
+
+.btn-success {
+    box-shadow: 0 0 0 1px #dbdbdb inset, 0 0 0 2px rgba(255, 255, 255, 0.15) inset, 0 8px 0 0 #dbdbdb, 0 8px 0 1px rgba(0, 0, 0, 0.4), 0 8px 8px 1px rgba(0, 0, 0, 0.5);
+    background-color: #cecece;
+}
+
+.panelmain {
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 20px;
+
 }

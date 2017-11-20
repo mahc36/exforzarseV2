@@ -41,6 +41,22 @@ app.controller("programCtrl", ["$scope", "programService", function ($scope, pro
         })
 
     }
+
+    $scope.listOfCampus = {}
+    $scope.listCampus = function () {
+        programService.listCampus().then(function (message) {
+            if (message.data.length != 0) {
+                $scope.listOfCampus = message.data;
+            } else {
+                alert("No hay ningun campus");
+            }
+            /*for ( var i=0; i<message.data.length ;++i) {
+            	alert("esto traje: "+message.data[i].id);
+            }*/
+        })
+    }
+
+
     $scope.preFilter = function (area) {
         programService.nameArea = area;
     }
@@ -48,6 +64,7 @@ app.controller("programCtrl", ["$scope", "programService", function ($scope, pro
     //permite que al cargarse la pagina programs.html se muestren todos los programas
     $scope.$watch('$viewContentLoaded', function () {
         $scope.filter();
+        $scope.listCampus();
     });
 
     $scope.priceRange = function (value) {
