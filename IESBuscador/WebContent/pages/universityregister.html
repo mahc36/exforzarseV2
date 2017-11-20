@@ -12,7 +12,6 @@
 	<script type="text/javascript" src="../js/controller/iesCtlr.js"></script>
 	<script type="text/javascript" src="../js/service/iesService.js"></script>
 	
-	
 </head>
 <body>
 	<nav class="navbar navbar-inverse" style="background-color:272B2A">
@@ -30,7 +29,7 @@
 		</div>
 	</nav>
 	
-	<div class="container" data-ng-app="app" data-ng-controller="iesCtlr">
+	<div class="container" data-ng-app="app" data-ng-controller="iesCtlr" data-ng-init="checkSession()">
         <h2>Registro Universidad</h2>
         <form>
             <div class="form-group">

@@ -8,6 +8,8 @@ import dto.IesDTO;
 public interface IIesBussiness {
 
 	List<Filter> getIes();
+	
+	List<IesDTO> getALLIes();
 
 	List<IesDTO> getIesbyFilter(Filter filter);
 

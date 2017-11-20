@@ -1,5 +1,24 @@
-app.controller("programCtrl", ["$scope", "programService", function ($scope, programService) {
+app.controller("programCtrl", ["$scope", "programService","$cookieStore","$window", function ($scope, programService,$cookieStore,$window) {
 
+	
+	
+	$scope.sessionData = {};
+    $scope.checkSession = function () {
+        var getCookie = $cookieStore.get('cookiePersonSession');
+        if (angular.isUndefined(getCookie)) {
+            alert("Debe iniciar sesion primero");
+            $window.location.href = 'login.html';
+            return;
+        } else {
+            $scope.sessionData.id = getCookie.id;
+            $scope.sessionData.name = getCookie.name;
+            $scope.sessionData.email = getCookie.email;
+            $scope.sessionData.password = getCookie.password;
+        }
+    }
+	
+	
+	
     $scope.programList = [];
     $scope.programs = [];
     $scope.priceFilter = "";

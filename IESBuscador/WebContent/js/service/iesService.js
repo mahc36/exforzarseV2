@@ -1,7 +1,7 @@
 app.factory("iesService", function($q, $http) {
 	return {
 		getList : function(){
-			return $http.get('http://localhost:8080/IESBuscador/rest/iesServices/getIES').then(function(data){
+			return $http.get('http://localhost:8080/IESBuscador/rest/iesServices/getAllIES').then(function(data){
 				var received = angular.fromJson(data);			
 				return received;
 			}).catch(function(data){

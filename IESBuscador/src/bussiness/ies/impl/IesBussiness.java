@@ -33,6 +33,22 @@ public class IesBussiness implements IIesBussiness {
 		}
 		return message;
 	}
+	
+	@Override
+	public List<IesDTO> getALLIes() {
+		Connection con =null;
+		List<IesDTO> message= new ArrayList<>();
+		try{
+			con= datasource.getConnection();
+			message= iesdao.getAllIes(con);
+		}catch (Exception e){
+			System.out.println(e.toString());
+		}finally {
+			PersistUtil.closeConnection(con);
+		}
+		return message;
+	}
+	
 
 	@Override
 	public List<IesDTO> getIesbyFilter(Filter filter) {
@@ -93,5 +109,7 @@ public class IesBussiness implements IIesBussiness {
 		}
 		return message;	
 	}
+
+	
 
 }

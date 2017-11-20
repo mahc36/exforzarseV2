@@ -97,7 +97,7 @@ app.controller("personCtrl", ["$scope", "personService", "$cookieStore", "$windo
                         personSession.password = message.data.password;
                         $cookieStore.put('cookiePersonSession', personSession);
                         var getCookie = $cookieStore.get('cookiePersonSession');
-                        $window.location.href = '../index.html';
+                        $window.location.href = '../pages/adminindex.html';
                     } else {
                         alert("El correo y/o la contraseña están incorrectas");
                     }
@@ -128,8 +128,8 @@ app.controller("personCtrl", ["$scope", "personService", "$cookieStore", "$windo
     $scope.checkSession = function () {
         var getCookie = $cookieStore.get('cookiePersonSession');
         if (angular.isUndefined(getCookie)) {
-            alert("Ahora mismo no hay una sesión activa");
-            $window.location.href = '../index.html';
+            alert("Debe iniciar sesion primero");
+            $window.location.href = 'login.html';
             return;
         } else {
             $scope.sessionData.id = getCookie.id;
